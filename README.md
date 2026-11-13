@@ -104,6 +104,8 @@ That message has exactly one reference in `lk` (LK base `0xffff000050f00000`, `W
 
 It is AVB verification against descriptors signed by the OEM, and it runs even when unlocked and even with verification disabled. That is why patching a boot image cannot work on these builds — until the key changes.
 
+**Status / affected window:** this behaviour is reported to be fixed in Motorola firmware from **September 2026** onward — per the val-protocol author, US builds carrying the fix use a `V`-prefix build number instead of `W`, and August 2026 is untested. Everything below therefore applies to builds up to that point. On a patched device, expect step 3 to be refused. I have verified this only on the April 2026 build listed above, not on a patched one.
+
 ## Step 3 — Replace the trust root
 
 Verified live on the configuration above: the gate honours `avb_custom_key`.
@@ -191,10 +193,13 @@ FRP bypass, IMEI/modem modification, and SIM/carrier unlocking are **out of scop
 ## Legal and ethics
 
 - Do this to hardware you own. Unlocking your own phone for interoperability falls under the DMCA anti-circumvention exemptions for wireless handsets in the US; other jurisdictions differ.
-- **Disclose before publishing.** The behaviour described in Step 2 is a bootloader design weakness. Report it to the vendor and give them time before a public write-up: Motorola Mobility PSIRT, `mbgpsirt@lenovo.com` (see `disclosure.md`).
+- The behaviour described in Step 2 is documented as observed on a single build. It is not presented as a general vulnerability in Motorola's bootloader, and no vendor advisory is claimed.
 - Do not redistribute OEM firmware. Link to sources instead.
 - Never publish a private signing key. The commands are the useful part; your key is not.
+- No FRP, IMEI, or carrier-unlock content. Those are the parts that stop being "my own device" and start being "someone else's", and they are excluded on purpose.
 - The upstream tools keep their own licenses: val-protocol is AGPL-3.0, Magisk is GPL-3.0, `avbtool` is Apache-2.0.
+
+No vendor notification is implied or claimed. If a takedown request ever arrives, answer it factually with the build strings and image digests recorded in this repo rather than arguing the law.
 
 ## Credits
 
