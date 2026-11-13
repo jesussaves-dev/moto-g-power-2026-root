@@ -1,6 +1,6 @@
 # Unlocking and rooting a Moto G Power 2026 (XT2617V / `vegas26`)
 
-**This is a write-up of what was done to one phone that its owner bought and owns.** It documents a bootloader weakness found by observation, a way around it, and the resulting root setup. It is not a general-purpose unlock service, and it deliberately contains nothing about FRP, IMEI, or carrier/SIM unlocking.
+**This is a write-up of what was done to one phone that its owner bought and owns** — a $30 Walmart prepaid moto g power - 2026. It documents a bootloader weakness found by observation, a way around it, and the resulting root setup. It is not a general-purpose unlock service, and it deliberately contains nothing about FRP, IMEI, or carrier/SIM unlocking.
 
 Read [Legal and ethics](#legal-and-ethics) before you do anything with this.
 
