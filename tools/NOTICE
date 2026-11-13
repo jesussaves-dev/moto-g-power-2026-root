@@ -1,0 +1,6 @@
+avbtool
+-------
+Vendored from AOSP external/avb (via the LineageOS mirror), Apache-2.0 / MIT
+licensed per its header. Upstream: https://android.googlesource.com/platform/external/avb
+
+Only used to add hash footers and vbmeta descriptors. Not modified.

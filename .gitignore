@@ -1,0 +1,17 @@
+# Never commit signing material or firmware.
+
+# keys and signed/vendor images
+avb_key.pem
+*.pem
+*.pk8
+avb_pub.bin
+*.img
+
+# firmware, GSI and module archives
+VEGAS_*
+gsi_*.zip
+*.zip
+
+# tooling output
+analysis/
+*.log
